@@ -136,7 +136,7 @@ nav ul li a:hover::after {
     background-color: #ff004f;
     position: absolute;
     left: 0;
-    bottom: -2px;
+    bottom: -5px;
     transition: 0.3s;
 }
 
