@@ -83,7 +83,7 @@ nav ul li a:hover::after {
 
 #about {
     padding: 80px 0;
-    color: #7b696f;
+    color: #c1a2ac;
 }
 
 .row {
@@ -132,16 +132,16 @@ nav ul li a:hover::after {
 .tab-links::after {
     content: '';
     width: 0;
-    height: 2px;
+    height: 3px;
     background-color: #ff004f;
     position: absolute;
     left: 0;
-    bottom: -1px;
-    transition: 0.2s;
+    bottom: -2px;
+    transition: 0.3s;
 }
 
 .tab-links.active-link::after {
-    width: 50%;
+    width: 60%;
 }
 
 .tab-contents ul li {
@@ -152,6 +152,11 @@ nav ul li a:hover::after {
 .tab-contents ul li span {
     color: rgba(255, 148, 129, 0.467);
     font-size: 25px;
+}
+
+.tab-contents ul li span strong {
+    color: rgba(241, 182, 171, 0.467);
+    font-size: 18px;
 }
 
 .tab-contents {
@@ -199,24 +204,24 @@ nav ul li a:hover::after {
     flex-direction: column;
     padding: 0 40px;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     transition: height 0.3s;
 }
 
 .layer h3 {
-    font-weight: 500;
-    margin-bottom: 20px;
+    font-weight: 900;
+    margin-bottom: 10px;
 }
 
 .layer a {
-    margin-top: 20px;
+    margin-top: 10px;
     color: #ff004f;
     text-decoration: none;
     font-size: 18px;
-    line-height: 60px;
+    line-height: 50px;
     background: #fff;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     text-align: center;
 }
