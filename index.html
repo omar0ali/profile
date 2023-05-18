@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>Omar BaGunaid</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/440def368b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+           
+                <nav>
+                    <img src="" class="logo">
+                    <ul id="side">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <i class="fas fa-times" onclick="closeM();"></i>
+                    </ul>
+                    <i class="fas fa-bars" id="outsideMenue" onclick="openM();"></i>
+                </nav>
+      
+            <div class="header-text">
+                <p><br><br><br></p>
+                <h1>Hi, my name is <span>Omar</span> BaGunaid<br> I am a graduate student from <span>York
+                        University</span> with a bachelor degree of Computer Sceince</h1>
+            </div>
+        </div>
+    </div>
+
+    <!----about---->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/profile1.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</spam>
+                    </h1>
+                    <p>
+                        I began my journey as a computer programmer in 2014 when I enrolled in a two-year diploma
+                        program at Algonquin College, which included a cooperative work placement. Following my studies,
+                        I gained three years of valuable experience as a programmer at Paphus Solutions Inc. In 2019, I
+                        decided to pursue a Bachelor's degree in Computer Science, and I will be graduating in June
+                        2023. I am excited to begin my next professional chapter and will be available for employment
+                        beginning in May of 2023.
+                        <br>
+                        <br>
+                        Throughout my career, I have worked with a variety of programming languages, including Java,
+                        Python, MySQL, PostgreSQL, and more. I have experience using Java for servlet and Android Studio
+                        development, Python for scripting and developing TensorFlow AI, and HTML, CSS, JavaScript, and
+                        JSP for front-end web development.
+                        <br>
+                        <br>
+                        During my Bachelor's degree studies, I further expanded my knowledge and skills in computer
+                        science, gaining both practical and theoretical experience.
+
+                        <br>
+                        <br>
+                        I deepened my understanding of complex topics such as algorithms and their efficiency, network
+                        and security, and different approaches to problem- solving. In addition to Java, Python, and web
+                        development languages, I also have experience in C and C ++.
+
+                        ​<br>
+                        <br>
+                        Thank you for considering me, and I look forward to discussing my qualifications with you
+                        further.
+                    </p>
+                    <div class="tab-titles">
+                        <!--p class="tab-links active-link" onclick="opentab('skills')">Skills</p-->
+                        <p class="tab-links active-link" onclick="opentab('paphus')">Paphus Solutions</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        
+                    </div>
+                    <div class="tab-contents" id="skills">
+                        <ul>
+                            <li><span>Programming Langauges</span><br>Info</li>
+                            <li><span>UI</span><br>Info</li>
+                            <li><span>UI</span><br>Info</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents active-tab" id="paphus">
+                        <ul>
+                            <li><span>Paphus Solutions Inc<br>January 2017 - Present</span><br>
+                                Developed modules based on design specifications and project delivery plans, using
+                                various programming languages such as Java, C#, Python, C, C++, HTML, XML, JSON, CSS,
+                                JavaScript, and jQuery.
+                                ​<br>
+                                <br>
+                                Conducted troubleshooting, debugging, and root cause analysis to fix defects and ensure
+                                the smooth operation of the software.
+                                ​<br>
+                                <br>
+                                Designed and implemented features using TensorFlow for image, video, audio, and object
+                                recognition, applying artificial intelligence (AI) techniques to build intelligent
+                                systems.
+                                ​<br>
+                                <br>
+                                Adhered to best practices by conducting initial research, project planning, product
+                                design, and writing and executing code that met industry standards and complied with
+                                coding conventions.
+                                ​<br>
+                                <br>
+                                Documented client requirements and provided high-level designs for proposed solutions
+                                that effectively resolved problems and improved performance, using architectural
+                                patterns such as Model- View-Controller (MVC) and Data Access Object (DAO) to organize
+                                code and make it more maintainable.
+                                ​<br>
+                                <br>
+                                Built a Python Flask framework feature that enabled users to easily upload files such as
+                                images and audios, train them using TensorFlow, and test them through a user-friendly
+                                web application interface.
+                                ​<br>
+                                <br>
+                                Worked with backend libraries such as Flask in Python and Servlet in Java to create
+                                dynamic web applications that interacted with databases such as SQL Server, MySQL, and
+                                PostgreSQL.
+                                ​<br>
+                                <br>
+                                Applied AI techniques to TensorFlow to develop intelligent systems such as image
+                                recognition, image object detection, audio recognition, text classification, and
+                                chatbots.
+                                ​<br>
+                                <br>
+                                Overall, I have a strong background in software development and AI, with a diverse set
+                                of skills in programming languages, backend libraries, databases, and architectural
+                                patterns. I am passionate about building intelligent systems that can make a positive
+                                impact on people's lives, and I am excited to bring my skills and experience to a new
+                                role.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>York University</span><br>Bachelor degree of Copmuter Science<br>2019-2023</li>
+                            <li><span>Algonquin College</span><br>Diploma Computer Programmer with coop<br>2015-2017
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----Portfolio---->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="project-list">
+                <div class="project">
+                    <img src="images/proj-fittracker.png">
+                    <div class="layer">
+                        <h3>bodyfittracker</h3>
+                        <p>Discover your body's muscles, workouts, and more. Achieve fitness goals easily with our
+                            user-friendly interface</p>
+                        <a href="https://github.com/omar0ali/bodyfittracker.github.io"><i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/proj-img-coord.png">
+                    <div class="layer">
+                        <h3>Coordinate-to-Map Generator</h3>
+                        <p>Easily create interactive image maps. Select an image, define coordinates, and generate HTML
+                            map tags. Enhance user engagement and interactivity on your website</p>
+                        <a href="https://github.com/omar0ali/img-coordinates"><i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/proj-backend-java.png">
+                    <div class="layer">
+                        <h3>E-commerce website (Back End)</h3>
+                        <p>Developed e-commerce website back-end with efficient data handling and key functionalities.
+                            Collaborated on seamless integration and scalability.
+                        </p>
+                        <a href="https://github.com/omar0ali/bodyfittracker.github.io"><i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i> bajunaidomar@outlook.com</p>
+                    <p><i class="fas fa-phone-square-alt"></i> (613)890-9697</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/omar0ali/"><i class="fab fa-github"></i></a>
+                        <a href="http://www.linkedin.com/in/omarbajunaid"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/omarbajunaid/"><i class="fab fa-github"></i></a>
+                    </div>
+                    <a href="images/Omar-BaGunaid.pdf" download id="submit_button" class="btn btn2">Download Resume (CV)</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button id="submit_button" type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2023 Omar BaGunaid. All rights reserved.</p>
+        </div>
+    </div>
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        var side = document.getElementById("side");
+
+        function openM() {
+            side.style.right = "0";
+        }
+        function closeM() {
+            side.style.right = "-200px";
+        }
+
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzI854mt5ZJicBmqZV8fCg8ELkSckIy8E7mVkF2z6_IugvtUcU4wEU7aGONJrnVZnjsKA/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg");
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    //console.log('Success!', response)
+                    msg.innerHTML = "Thanks for submitting!";
+                    setTimeout(function () {
+                        msg.innerHTML = "";
+                    }, 2000)
+                    form.reset();
+                })
+                .catch(error => {
+                    msg.innerHTML = "Please make sure all adblocker are disabled.<br>Error: " + error.message;
+                    msg.style.color = "red";
+                })
+        })
+    </script>
+
+</body>
+
+</html>
