@@ -1,5 +1,4 @@
 * {
-    margin: 0;
     padding: 0;
     font-family: 'Poppins', 'sans-serif';
     box-sizing: border-box;
@@ -35,6 +34,26 @@ nav {
 
 .logo {
     width: 150px;
+}
+
+fieldset {
+    border-radius: 10px;
+    padding: 25px;
+    font-size: 15px;
+    text-decoration-color: #ffffff;
+    height: 60vh;
+    overflow: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+fieldset strong {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+
+.noDecoration, a:link, a:visited {
+    text-decoration: none;
 }
 
 nav ul li {
@@ -335,6 +354,11 @@ nav .fas {
 
 /*------ small screen edit ------- */
 @media only screen and (max-width: 600px) {
+
+    *{
+        margin: 0;
+    }
+
     #header {
         background-image: url(../images/user-background.png);
     }
@@ -428,6 +452,20 @@ nav .fas {
         width: 100%;
     }
 
+    fieldset {
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 15px;
+        text-decoration-color: #ffffff;
+        height: 65vh;
+        overflow: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn {
+        display: block;
+        margin: 20px auto;
+    }
 }
 
 #msg {
