@@ -457,14 +457,14 @@ nav .fas {
         padding: 10px;
         font-size: 15px;
         text-decoration-color: #ffffff;
-        height: 65vh;
+        height: 55vh;
         overflow: auto;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
     .btn {
         display: block;
-        margin: 20px auto;
+        margin: 15px auto;
     }
 }
 
