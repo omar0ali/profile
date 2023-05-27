@@ -205,7 +205,7 @@
                         (CV)</a>
                 </div>
                 <div class="contact-right">
-                    <form name="submit-to-google-sheet">
+                    <form method="POST" action="https://formspree.io/f/mnqyyoak">
                         <input type="text" name="Name" placeholder="Your Name" required>
                         <input type="email" name="Email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
@@ -244,27 +244,6 @@
         function closeM() {
             side.style.right = "-200px";
         }
-
-
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzI854mt5ZJicBmqZV8fCg8ELkSckIy8E7mVkF2z6_IugvtUcU4wEU7aGONJrnVZnjsKA/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg");
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    //console.log('Success!', response)
-                    msg.innerHTML = "Thanks for submitting!";
-                    setTimeout(function () {
-                        msg.innerHTML = "";
-                    }, 2000)
-                    form.reset();
-                })
-                .catch(error => {
-                    msg.innerHTML = "Please make sure all adblocker are disabled.<br>Error: " + error.message;
-                    msg.style.color = "red";
-                })
-        })
     </script>
 
 </body>
