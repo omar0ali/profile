@@ -26,7 +26,7 @@
             <input type="email" name="Email" placeholder="Your Email" required>
             <textarea id="subject" style="height: 40%; resize: none;" name="Message" rows="6"
                 placeholder="Your Message"></textarea>
-            <button style="color: white; width: 100%; " type="submit">Submit</button>
+            <button class="button" style="color: white; width: 100%; " type="submit">Submit</button>
         </form>
         <span id="msg"></span>
     </div>
@@ -48,12 +48,12 @@
 
     <div include-html="components/footer.html"></div>
     <style>
-        button:hover {
+        .button:hover {
             background: #0b5394;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
-        button {
+        .button {
             border: 1px solid #a85d74;
             padding: 14px 50px;
             cursor: pointer;
@@ -63,7 +63,7 @@
             font-size: 18px;
         }
 
-        button {
+        .button {
             background-color: #2a2a2a;
             border: none;
             color: white;
