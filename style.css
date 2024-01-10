@@ -1,0 +1,17 @@
+html {
+    margin-top: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-size: 18px;
+}
+
+@media (pointer:none), (pointer:coarse) {
+    html {
+        nav {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
