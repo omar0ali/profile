@@ -18,7 +18,7 @@ function includeHTML() {
           includeHTML();
         }
       }      
-      xhttp.open("GET", file, true);
+      xhttp.open("GET", "resume/"+file, true);
       xhttp.send();
       /*exit the function:*/
       return;
