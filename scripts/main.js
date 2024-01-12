@@ -31,7 +31,7 @@ function includeHTML(debug) {
 					if (this.status == 404) {
 						element.innerHTML = "Page not found.";
 					}
-					/*remove the attribute, and call this function once more:*/
+                    /*remove the attribute, and call this function once more:*/
 					element.removeAttribute("include-html");
 					includeHTML(false);
 				}
