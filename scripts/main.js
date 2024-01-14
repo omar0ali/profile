@@ -1,11 +1,12 @@
+//Change path if running on localhost
 function debug(debug) {
 	let styleLink = document.getElementById("style");
-    console.log("Debug is "+ debug)
+    //console.log("Debug is "+ debug)
 	if (debug) {
-        console.log("Debugging")
+      //  console.log("Debugging")
 		styleLink.href = "./style.css";
 	} else {
-        console.log("Debugging Off")
+       //console.log("Debugging Off")
 		styleLink.href = "resume/style.css";
 	}
 }
