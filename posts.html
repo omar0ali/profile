@@ -116,7 +116,6 @@
             let urlParts = path.split('/')
             urlParts.pop()
             path = urlParts.join('/')
-            console.log(`POSTS: ${path}`)
             try {
                 const response = await fetch(path+'/'+file_location);
                 if (!response.ok) {
