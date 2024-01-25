@@ -3,7 +3,7 @@ class FooterComponent extends HTMLElement {
 		this.loadContent();
 	}
 	async loadContent() {
-		const html = await fetch("components/footer.html");
+		const html = await fetch("resume/components/footer.html");
 		this.innerHTML = await html.text();
 	}
 }

@@ -3,7 +3,7 @@ class EducationComponent extends HTMLElement {
         this.loadContent();
     }
     async loadContent() {
-        const html = await fetch("/components/education.html");
+        const html = await fetch("resume/components/education.html");
         this.innerHTML = await html.text();
     }
 }

@@ -4,8 +4,8 @@ class HeaderComponent extends HTMLElement {
     }
     async loadContent() {
         this.content = this.innerHTML || ""
-        const html = await fetch("components/header.html");
-        const topBanner = await fetch("components/topBanner.html")
+        const html = await fetch("resume/components/header.html");
+        const topBanner = await fetch("resume/components/topBanner.html")
         this.innerHTML = await topBanner.text() + await html.text() + `<h1>${this.content}</h1><hr>`;
     }
 }

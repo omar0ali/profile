@@ -4,7 +4,7 @@ class ExperienceComponent extends HTMLElement {
     }
     async loadContent() {
 
-        const html = await fetch("components/experience.html");
+        const html = await fetch("resume/components/experience.html");
         this.innerHTML = await html.text();
     }
 }
