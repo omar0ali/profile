@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="module" src="components/t_header.js"></script>
+    <script type="module" src="components/t_footer.js"></script>
+    <script type="module" src="components/t_imports.js"></script>
+    <t-imports title="Blogs"></t-imports>
+    <script src="https://kit.fontawesome.com/440def368b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <style>
+        table {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        #tableOfContents {
+            width: 20%;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        #blogContent {
+            padding: 20px;
+        }
+
+        #h2 {
+            color: #333;
+        }
+
+        #ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #li {
+            margin-bottom: 8px;
+        }
+
+        #btn {
+            border: 0px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <t-header>Posts</t-header>
+    <table>
+        <tr>
+            <td id="tableOfContents">
+                <h2 id="h2">Menu</h2>
+                <ul id="ul">
+                    <li id="li"><a href="javascript:void(0);" class="link-underline-secondary" onclick="loadMarkdown('resume/README.md')">README</a></li>
+                    <!-- Add more links as needed -->
+                </ul>
+            </td>
+
+            <td id="blogContent">
+                <div id="content"></div>
+            </td>
+        </tr>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            loadMarkdown('resume/README.md')
+        })
+        async function loadMarkdown(file_location) {
+            try {
+                const response = await fetch(file_location);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
+                }
+                const htmlContent = marked.parse(await response.text());
+                document.getElementById('content').innerHTML = htmlContent;
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    </script>
+    <t-footer></t-footer>
+</body>
+
+</html>
