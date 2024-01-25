@@ -5,16 +5,17 @@ class HeaderComponent extends HTMLElement {
         this.loadContent();
     }
     async loadContent() {
+        let urlParts = []
         let path = getRealUrl(window.location.href);
         console.log("url: "+path)
+        this.urlParts = path.split('/');
         if(path.includes(":")) {
-            path = ''
+            this.path = ''
         } else {
-            const urlParts = path.split('/');
-            path = urlParts[urlParts.length-2]
+            this.path = this.urlParts[this.urlParts.length-2]
         }
-
-        console.log("uPath: "+path)
+        console.log(this.urlParts)
+        console.log("uPath: "+this.path)
 
         this.content = this.innerHTML || ""
         const header = await fetch(`${getRealUrl(window.location.href)}/components/header.html`);
