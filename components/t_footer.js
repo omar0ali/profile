@@ -1,5 +1,6 @@
 class FooterComponent extends HTMLElement {
 	connectedCallback() {
+		console.log(window.location.href);
 		this.loadContent();
 	}
 	async loadContent() {
