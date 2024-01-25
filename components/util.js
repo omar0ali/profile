@@ -7,10 +7,12 @@
 export function getRealUrl(window_location) {
     const urlParts = window_location.split('/');
     const lastPart = urlParts[urlParts.length - 1];
-    if (lastPart.includes("html")) {
-        urlParts.pop()
-        return urlParts.join('/')
-    } else {
-        return urlParts.join('/')
-    }
+    // if (lastPart.includes("html")) {
+    //     urlParts.pop()
+    //     return urlParts.join('/')
+    // } else {
+    //     return urlParts.join('/')
+    // }
+    urlParts.pop()
+    return urlParts.join('/')
 }

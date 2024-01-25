@@ -11,10 +11,10 @@ class HeaderComponent extends HTMLElement {
 		if (this.path.includes("localhost")) {
 			this.path = "";
 		} else {
-			this.path = this.urlParts[this.urlParts.length - 2];
+			this.path = this.urlParts[this.urlParts.length - 1];
 		}
         console.log(this.urlParts)
-		console.log(this.urlParts[this.urlParts.length - 2]);
+		console.log(this.urlParts[this.urlParts.length - 1]);
 
 		this.content = this.innerHTML || "";
 		const header = await fetch(
