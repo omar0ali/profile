@@ -11,7 +11,7 @@ class HeaderComponent extends HTMLElement {
             path = ''
         } else {
             const urlParts = path.split('/');
-            path = urlParts[urlParts.length-1]
+            path = urlParts[urlParts.length-2]
         }
 
         console.log("uPath: "+path)
