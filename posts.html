@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <!-- TODO: Mobile view for posts. -->
+
 <head>
     <script type="module" src="components/t_imports.js"></script>
     <script type="module" src="components/t_header.js"></script>
@@ -27,7 +28,7 @@
         #menu {
             width: 20%;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #676767be;
         }
 
         #postContent {
@@ -46,9 +47,11 @@
         #li {
             margin-bottom: 8px;
         }
+
         #btn {
             width: 100%;
         }
+
         #menu-mobile-view {
             font-size: 18px;
             width: 100%;
@@ -60,17 +63,18 @@
 
 <body>
     <t-header>Posts</t-header>
-      <select id="menu-mobile-view" onchange="loadMarkdown(this.value)">
+    <select id="menu-mobile-view" onchange="loadMarkdown(this.value)">
         <option value="README.md">README - Portfolio using JS WebComponents</option>
         <!-- Add more options as needed -->
-      </select>
-      <div id="content-mobile"></div>
+    </select>
+    <div id="content-mobile"></div>
     <table id="menu-desktop-view">
         <tr>
             <td id="menu">
                 <!-- <h2 id="h2">Menu</h2> -->
                 <ul id="ul">
-                    <li id="li"><button id="btn" type="button" class="btn btn-secondary" onclick="loadMarkdown('README.md')">README - Portfolio using JS WebComponents</button></li>
+                    <li id="li"><button id="btn" type="button" class="btn btn-light"
+                            onclick="loadMarkdown('README.md')">README - Portfolio using JS WebComponents<span class="badge bg-secondary">2024-01-25</span></button></li>
                     <!-- Add more links as needed -->
                 </ul>
             </td>
@@ -84,29 +88,35 @@
     <script>
         // Function to load content based on screen width
         function loadContent() {
-          var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    
-          if (screenWidth <= 900) {
-            // Load mobile version content
-            document.getElementById('menu-mobile-view').style.display = 'block';
-            document.getElementById('content-mobile').style.display = 'block';
-            document.getElementById('content-desktop').style.display = 'none';
-            document.getElementById('menu-desktop-view').style.display = 'none';
-          } else {
-            // Load desktop version content
             document.getElementById('menu-mobile-view').style.display = 'none';
             document.getElementById('content-mobile').style.display = 'none';
-            document.getElementById('content-desktop').style.display = 'block';
-            document.getElementById('menu-desktop-view').style.display = 'block';
-          }
+            document.getElementById('content-desktop').style.display = 'none';
+            document.getElementById('menu-desktop-view').style.display = 'none';
+            setTimeout(function(){
+                var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                
+                if (screenWidth <= 900) {
+                    // Load mobile version content
+                    document.getElementById('menu-mobile-view').style.display = 'block';
+                    document.getElementById('content-mobile').style.display = 'block';
+                    document.getElementById('content-desktop').style.display = 'none';
+                    document.getElementById('menu-desktop-view').style.display = 'none';
+                } else {
+                    // Load desktop version content
+                    document.getElementById('menu-mobile-view').style.display = 'none';
+                    document.getElementById('content-mobile').style.display = 'none';
+                    document.getElementById('content-desktop').style.display = 'block';
+                    document.getElementById('menu-desktop-view').style.display = 'block';
+                }
+            },300)
         }
-    
+
         // Initial load
         loadContent();
-    
+
         // Event listener for window resize
         window.addEventListener('resize', loadContent);
-      </script>
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', async function () {
             loadMarkdown('README.md')
@@ -117,7 +127,7 @@
             urlParts.pop()
             path = urlParts.join('/')
             try {
-                const response = await fetch(path+'/'+file_location);
+                const response = await fetch(path + '/' + file_location);
                 if (!response.ok) {
                     throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
                 }

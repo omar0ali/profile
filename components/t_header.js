@@ -14,17 +14,17 @@ class HeaderComponent extends HTMLElement {
 		}
 
 		this.content = this.innerHTML || "";
-		const header = await fetch(
+		this.header = await fetch(
 			`${getRealUrl(window.location.href)}/components/header.html`
 		);
-		const banner = await fetch(
+		this.banner = await fetch(
 			`${getRealUrl(window.location.href)}/components/topBanner.html`
 		);
-		const txtHeader = await header.text();
-		const txtBanner = await banner.text();
-		let modifiedHeader = txtHeader.replace(/path/g, this.path);
+		this.txtHeader = await this.header.text();
+		this.txtBanner = await this.banner.text();
+		let modifiedHeader = this.txtHeader.replace(/path/g, this.path);
 		this.innerHTML =
-			txtBanner + modifiedHeader + `<h1>${this.content}</h1><hr>`;
+			this.txtBanner + modifiedHeader + `<h1>${this.content}</h1><hr>`;
 	}
 }
 

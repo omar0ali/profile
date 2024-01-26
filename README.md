@@ -17,7 +17,7 @@ Building this website was made seamless and modular through the use of Web Compo
 
 -   **Web Components:** Leveraged the power of Web Components to create modular and reusable UI elements.
 
--   **Custom Elements:** Defined custom HTML elements like `<my-header>` and `<t-footer>` to encapsulate specific parts of the page and functionality.
+-   **Custom Elements:** Defined custom HTML elements like `<t-header>` and `<t-footer>` to encapsulate specific parts of the page and functionality.
 
 -   **Shadow DOM:** You can also utilized Shadow DOM to encapsulate the styles of individual components, preventing external styles from affecting their design. But I didn't go that far since I didn't really need to.
 
@@ -79,7 +79,7 @@ This is how components are easily imported on every page where you want to use t
 </body>
 ```
 
-### Benefits
+### Benefits of using Web Components
 
 Web Components offer a high degree of reusability, allowing components to be seamlessly utilized across different pages or projects. This becomes particularly advantageous when the goal is to quickly build a website for something straightforward, such as a portfolio. Unlike relying on entire libraries or frameworks like React or Angular for simpler projects, Web Components provide a lightweight solution. This simplicity is especially beneficial when the main objective is a swift development process.
 
@@ -90,6 +90,10 @@ Using Web Components for non expensive or complex projects it will both, satisfi
 ## Additional Resources
 
 For more information on Web Components, I referred to the [WebComponents](https://developer.mozilla.org/en-US/docs/Web/API/Web_components) WebDocs on Mozilla Developer Network (MDN). The documentation provided comprehensive guidance and examples, making the development process smooth and efficient.
+
+
+- Used Bootstrap (https://getbootstrap.com/docs/5.3) for styling and layout.
+- Used Marked (https://github.com/markedjs/marked) to facilitate the rendering of Markdown content within HTML.
 
 
 ### LINKS
