@@ -88,27 +88,21 @@
     <script>
         // Function to load content based on screen width
         function loadContent() {
-            document.getElementById('menu-mobile-view').style.display = 'none';
-            document.getElementById('content-mobile').style.display = 'none';
-            document.getElementById('content-desktop').style.display = 'none';
-            document.getElementById('menu-desktop-view').style.display = 'none';
-            setTimeout(function(){
-                var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-                
-                if (screenWidth <= 900) {
-                    // Load mobile version content
-                    document.getElementById('menu-mobile-view').style.display = 'block';
-                    document.getElementById('content-mobile').style.display = 'block';
-                    document.getElementById('content-desktop').style.display = 'none';
-                    document.getElementById('menu-desktop-view').style.display = 'none';
-                } else {
-                    // Load desktop version content
-                    document.getElementById('menu-mobile-view').style.display = 'none';
-                    document.getElementById('content-mobile').style.display = 'none';
-                    document.getElementById('content-desktop').style.display = 'block';
-                    document.getElementById('menu-desktop-view').style.display = 'block';
-                }
-            },300)
+            var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+            if (screenWidth <= 900) {
+                // Load mobile version content
+                document.getElementById('menu-mobile-view').style.display = 'block';
+                document.getElementById('content-mobile').style.display = 'block';
+                document.getElementById('content-desktop').style.display = 'none';
+                document.getElementById('menu-desktop-view').style.display = 'none';
+            } else {
+                // Load desktop version content
+                document.getElementById('menu-mobile-view').style.display = 'none';
+                document.getElementById('content-mobile').style.display = 'none';
+                document.getElementById('content-desktop').style.display = 'block';
+                document.getElementById('menu-desktop-view').style.display = 'block';
+            }
         }
 
         // Initial load
