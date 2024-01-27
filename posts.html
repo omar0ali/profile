@@ -14,10 +14,17 @@
         crossorigin="anonymous"></script>
     <style>
         table {
-            font-family: Arial, sans-serif;
             margin: 0;
             width: 100%;
             border-collapse: collapse;
+        }
+
+        #content-mobile {
+            font-family: 'Fira Code';
+        }
+        #content-desktop {
+            font-family: 'Fira Code';
+            font-size: 20px;
         }
 
         td {
@@ -64,7 +71,7 @@
 <body>
     <t-header>Posts</t-header>
     <select id="menu-mobile-view" onchange="loadMarkdown(this.value)">
-        <option value="README.md">README - Portfolio using JS WebComponents</option>
+        <option value="README.md">Portfolio using JS WebComponents</option>
         <!-- Add more options as needed -->
     </select>
     <div id="content-mobile"></div>
@@ -74,7 +81,7 @@
                 <!-- <h2 id="h2">Menu</h2> -->
                 <ul id="ul">
                     <li id="li"><button id="btn" type="button" class="btn btn-light"
-                            onclick="loadMarkdown('README.md')">README - Portfolio using JS WebComponents<span class="badge bg-secondary">2024-01-25</span></button></li>
+                            onclick="loadMarkdown('README.md')">Portfolio using JS WebComponents<br><span class="badge bg-secondary">2024-01-25</span></button></li>
                     <!-- Add more links as needed -->
                 </ul>
             </td>

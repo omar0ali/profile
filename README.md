@@ -27,11 +27,20 @@ It's still my first time using Web Components, but I feel like it's pretty simpl
 
 Before delving deeper, it's important to clarify that I might have used Web Components in a non-conventional way. However, my primary goal is to simplify my development process by creating small files and seamlessly connecting them. For instance, the Index page is a collection of components, where each component is essentially an HTML page with specific information. The aim is to avoid redundant repetition across every web page, and Web Components have effectively fulfilled this requirement for me.
 
+#### Lifecycle Callbacks
+
+Web Components lifecycle callbacks such as connectedCallback and disconnectedCallback allow's developers to execute code at specific points in the component's lifecycle.
+```javascript
+connectedCallback() {
+  // Code to run when the element is added
+}
+
+disconnectedCallback() {
+  // Code to run when the element is removed
+}
+```
 #### Header Component
 
-```html
-<t-header></t-header>
-```
 
 The `<t-header>` component displays the navigation bar and the Top Banner, showing a link where there is a downloadable pdf file of my CV. It is dynamically loads content from an external HTML file.
 
@@ -45,25 +54,34 @@ class HeaderComponent extends HTMLElement {
 	}
 	async loadContent() {
 		this.content = this.innerHTML || "";
-		const html = await fetch("components/header.html");
-		const topBanner = await fetch("components/topBanner.html");
+		const html = await fetch("components/header.html"); //Load html file.
 		this.innerHTML =
-			(await topBanner.text()) +
 			(await html.text()) +
-			`<h1>${this.content}</h1><hr>`;
+			`<h1>${this.content}</h1>`;
 	}
 }
 // Define the custom element with the tag name "t-header."
 customElements.define("t-header", HeaderComponent);
 ```
+```html
+<t-header>Content...</t-header>
+```
 
 #### Footer Component
 
-```html
-<t-footer></t-footer>
-```
-
 The `<t-footer>` component provides a footer section for the website.
+
+```javascript
+class FooterComponent extends HTMLElement {
+	connectedCallback() {
+		const html = await fetch(`/components/footer.html`);
+		this.innerHTML = await html.text();
+	}
+}
+
+customElements.define("t-footer", FooterComponent);
+```
+- Here I didn't need to add content between ```<t-footer><t-footer>```
 
 ### Importing Components
 This is how components are easily imported on every page where you want to use them
