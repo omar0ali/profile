@@ -1,146 +1,165 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-bs-theme="dark">
-<!-- TODO: Mobile view for posts. -->
+  <!-- TODO: Mobile view for posts. -->
 
-<head>
+  <head>
     <script type="module" src="components/t_imports.js"></script>
     <script type="module" src="components/t_header.js"></script>
     <script type="module" src="components/t_footer.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <t-imports title="Posts"></t-imports>
-    <script src="https://kit.fontawesome.com/440def368b.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/440def368b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
     <style>
-        table {
-            margin: 0;
-            width: 100%;
-            border-collapse: collapse;
-        }
+      table {
+        margin: 0;
+        width: 100%;
+        border-collapse: collapse;
+      }
 
-        #content-mobile {
-            font-family: 'Fira Code';
-        }
-        #content-desktop {
-            font-family: 'Fira Code';
-            font-size: 20px;
-        }
+      /* #content-mobile { */
+      /*   font-family: "Fira Code"; */
+      /* } */
+      /* #content-desktop { */
+      /*   font-family: "Fira Code"; */
+      /*   font-size: 20px; */
+      /* } */
 
-        td {
-            border-radius: 20px;
-            vertical-align: top;
-        }
+      td {
+        border-radius: 20px;
+        vertical-align: top;
+      }
 
-        #menu {
-            width: 20%;
-            padding: 20px;
-            background-color: #676767be;
-        }
+      #menu {
+        width: 20%;
+        padding: 20px;
+        background-color: #676767be;
+      }
 
-        #postContent {
-            padding: 20px;
-        }
+      #postContent {
+        padding: 20px;
+      }
 
-        #h2 {
-            color: #333;
-        }
+      #h2 {
+        color: #333;
+      }
 
-        #ul {
-            list-style-type: none;
-            padding: 0;
-        }
+      #ul {
+        list-style-type: none;
+        padding: 0;
+      }
 
-        #li {
-            margin-bottom: 8px;
-        }
+      #li {
+        margin-bottom: 8px;
+      }
 
-        #btn {
-            width: 100%;
-        }
+      #btn {
+        width: 100%;
+      }
 
-        #menu-mobile-view {
-            font-size: 18px;
-            width: 100%;
-            padding: 5px;
-        }
+      #menu-mobile-view {
+        font-size: 18px;
+        width: 100%;
+        padding: 5px;
+      }
     </style>
-</head>
+  </head>
 
-
-<body>
+  <body>
     <t-header>Posts</t-header>
     <select id="menu-mobile-view" onchange="loadMarkdown(this.value)">
-        <option value="README.md">Portfolio using JS WebComponents</option>
-        <!-- Add more options as needed -->
+      <option value="README.md">Portfolio using JS WebComponents</option>
+      <!-- Add more options as needed -->
     </select>
     <div id="content-mobile"></div>
     <table id="menu-desktop-view">
-        <tr>
-            <td id="menu">
-                <!-- <h2 id="h2">Menu</h2> -->
-                <ul id="ul">
-                    <li id="li"><button id="btn" type="button" class="btn btn-light"
-                            onclick="loadMarkdown('README.md')">Portfolio using JS WebComponents<br><span class="badge bg-secondary">2024-01-25</span></button></li>
-                    <!-- Add more links as needed -->
-                </ul>
-            </td>
+      <tr>
+        <td id="menu">
+          <!-- <h2 id="h2">Menu</h2> -->
+          <ul id="ul">
+            <li id="li">
+              <button
+                id="btn"
+                type="button"
+                class="btn btn-light"
+                onclick="loadMarkdown('README.md')"
+              >
+                Portfolio using JS WebComponents<br /><span
+                  class="badge bg-secondary"
+                  >2024-01-25</span
+                >
+              </button>
+            </li>
+            <!-- Add more links as needed -->
+          </ul>
+        </td>
 
-            <td id="postContent">
-                <div id="content-desktop"></div>
-            </td>
-        </tr>
+        <td id="postContent">
+          <div id="content-desktop"></div>
+        </td>
+      </tr>
     </table>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
-        // Function to load content based on screen width
-        function loadContent() {
-            var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      // Function to load content based on screen width
+      function loadContent() {
+        var screenWidth =
+          window.innerWidth ||
+          document.documentElement.clientWidth ||
+          document.body.clientWidth;
 
-            if (screenWidth <= 900) {
-                // Load mobile version content
-                document.getElementById('menu-mobile-view').style.display = 'block';
-                document.getElementById('content-mobile').style.display = 'block';
-                document.getElementById('content-desktop').style.display = 'none';
-                document.getElementById('menu-desktop-view').style.display = 'none';
-            } else {
-                // Load desktop version content
-                document.getElementById('menu-mobile-view').style.display = 'none';
-                document.getElementById('content-mobile').style.display = 'none';
-                document.getElementById('content-desktop').style.display = 'block';
-                document.getElementById('menu-desktop-view').style.display = 'block';
-            }
+        if (screenWidth <= 900) {
+          // Load mobile version content
+          document.getElementById("menu-mobile-view").style.display = "block";
+          document.getElementById("content-mobile").style.display = "block";
+          document.getElementById("content-desktop").style.display = "none";
+          document.getElementById("menu-desktop-view").style.display = "none";
+        } else {
+          // Load desktop version content
+          document.getElementById("menu-mobile-view").style.display = "none";
+          document.getElementById("content-mobile").style.display = "none";
+          document.getElementById("content-desktop").style.display = "block";
+          document.getElementById("menu-desktop-view").style.display = "block";
         }
+      }
 
-        // Initial load
-        loadContent();
+      // Initial load
+      loadContent();
 
-        // Event listener for window resize
-        window.addEventListener('resize', loadContent);
+      // Event listener for window resize
+      window.addEventListener("resize", loadContent);
     </script>
     <script>
-        document.addEventListener('DOMContentLoaded', async function () {
-            loadMarkdown('README.md')
-        })
-        async function loadMarkdown(file_location) {
-            let path = window.location.href
-            let urlParts = path.split('/')
-            urlParts.pop()
-            path = urlParts.join('/')
-            try {
-                const response = await fetch(path + '/' + file_location);
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
-                }
-                const htmlContent = marked.parse(await response.text());
-                document.getElementById('content-desktop').innerHTML = htmlContent;
-                document.getElementById('content-mobile').innerHTML = htmlContent;
-            } catch (error) {
-                console.error(error);
-            }
+      document.addEventListener("DOMContentLoaded", async function () {
+        loadMarkdown("README.md");
+      });
+      async function loadMarkdown(file_location) {
+        let path = window.location.href;
+        let urlParts = path.split("/");
+        urlParts.pop();
+        path = urlParts.join("/");
+        try {
+          const response = await fetch(path + "/" + file_location);
+          if (!response.ok) {
+            throw new Error(
+              `Failed to fetch: ${response.status} ${response.statusText}`,
+            );
+          }
+          const htmlContent = marked.parse(await response.text());
+          document.getElementById("content-desktop").innerHTML = htmlContent;
+          document.getElementById("content-mobile").innerHTML = htmlContent;
+        } catch (error) {
+          console.error(error);
         }
+      }
     </script>
     <t-footer></t-footer>
-</body>
-
+  </body>
 </html>
