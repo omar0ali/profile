@@ -1,10 +1,7 @@
 import { getRealUrl } from "./util.js";
 
 class HeaderComponent extends HTMLElement {
-	connectedCallback() {
-		this.loadContent();
-	}
-	async loadContent() {
+	async connectedCallback() {
 		this.path = getRealUrl(window.location.href);
 		this.urlParts = this.path.split("/");
 		if (this.path.includes("localhost")) {
